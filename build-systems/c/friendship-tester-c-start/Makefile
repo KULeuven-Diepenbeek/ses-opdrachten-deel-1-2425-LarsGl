@@ -15,7 +15,7 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c,$(BUILDDIR)/%.o,$(CFILES))
 
 TARGET = friendshiptester.bin
 
-all: $(TARGET)
+compile: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $@ $^
@@ -28,4 +28,5 @@ clean:
 
 run: $(TARGET)
 	./$(TARGET)
+
 

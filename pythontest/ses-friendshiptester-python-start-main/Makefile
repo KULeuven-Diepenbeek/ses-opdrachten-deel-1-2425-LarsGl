@@ -13,5 +13,5 @@ clean:
 	@echo "Done cleaning."
 test:
 	@echo "testing ..."
-	./dist/app.bin
+	python3 app.py
 	@echo "Done testing."

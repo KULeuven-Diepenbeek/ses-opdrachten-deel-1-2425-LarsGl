@@ -1,0 +1,6 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+./dependency-management/checkneighbours/.gradle/
+./dependency-management/checkneighbours/build/
+# Ignore Gradle build output directory
+build

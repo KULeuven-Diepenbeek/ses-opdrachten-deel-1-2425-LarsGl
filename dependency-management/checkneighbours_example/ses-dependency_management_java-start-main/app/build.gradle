@@ -1,0 +1,58 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Voeg alle JAR-bestanden in de lib-map toe als dependencies
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
+    
+    // JUnit voor testen
+    testImplementation 'junit:junit:4.13.2'
+
+    // Google Guava als extra dependency
+    implementation 'com.google.guava:guava:30.1.1-jre'
+}
+
+application {
+    // Zorg ervoor dat de mainClass correct is ingesteld
+    mainClass = 'be.ses.App'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11)) // Pas aan naar jouw Java-versie
+    }
+}
+
+// Zorg dat de standaard Gradle-mappen worden gebruikt voor de broncode
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+// Taak om de code te compileren
+tasks.register('compile', JavaCompile) {
+    source = sourceSets.main.java
+    destinationDirectory = file("$buildDir/compiled-classes")
+    classpath = sourceSets.main.compileClasspath
+}
+
+// Taak om het project te bouwen
+tasks.register('build') {
+    dependsOn 'compile', 'test'
+    doLast {
+        println 'Project succesvol gebouwd!'
+    }
+}

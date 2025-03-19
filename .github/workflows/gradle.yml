@@ -27,7 +27,7 @@ jobs:
       run: find . -name "gradlew" -exec chmod +x {} \;
 
     - name: Build and Run Tests with Gradle Wrapper
-      run: ./gradlew test
+      run: find . -name "gradlew" -exec ./{} test \;
 
   dependency-submission:
 

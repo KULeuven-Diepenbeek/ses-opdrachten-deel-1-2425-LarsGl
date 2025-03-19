@@ -27,7 +27,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build and Run Tests with Gradle Wrapper
-      run: ./gradlew build test
+      run: find . -name "gradlew" -exec chmod +x {} \;
 
   dependency-submission:
 

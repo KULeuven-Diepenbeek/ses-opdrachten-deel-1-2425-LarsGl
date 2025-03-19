@@ -1,1 +1,1 @@
-![Java CI with Gradle Status](https://github.com/larsgl/checkneighbours/actions/workflows/gradle.yml/badge.svg)
+![Java CI with Gradle](https://github.com/LarsGl/checkneighbours/actions/workflows/gradle.yml/badge.svg)

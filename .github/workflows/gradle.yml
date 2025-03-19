@@ -27,5 +27,4 @@ jobs:
       run: chmod +x ./dependency-management/checkneighbours/gradlew
 
     - name: Build and Run Tests with Gradle Wrapper
-      run: ./dependency-management/checkneighbours/gradlew test
-  
+      run: find . -name "gradlew" -exec ./{} test \;

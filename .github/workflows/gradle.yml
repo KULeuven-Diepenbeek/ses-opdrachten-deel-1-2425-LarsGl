@@ -24,10 +24,10 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
+      run: find . -name "gradlew" -exec chmod +x {} \;
 
     - name: Build and Run Tests with Gradle Wrapper
-      run: find . -name "gradlew" -exec chmod +x {} \;
+      run: ./gradlew test
 
   dependency-submission:
 
